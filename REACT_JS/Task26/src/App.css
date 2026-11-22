@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Times New Roman", serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding-top: 65px;
+  padding-bottom: 50px;
+}
+
+.app h2 {
+  text-align: center;
+  color: mediumslateblue;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.card-container {
+  width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 170px);
+  justify-content: space-between;
+  row-gap: 47px;
+}
+
+.card {
+  width: 170px;
+  height: 170px;
+  position: relative;
+  background-color: black;
+  text-align: center;
+  padding-top: 25px;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(
+    red,
+    blue,
+    violet,
+    orange,
+    yellow,
+    green,
+    red
+  );
+  animation: rotateBorder 4s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: black;
+}
+
+.card img,
+.card h3,
+.card p {
+  position: relative;
+  z-index: 2;
+}
+
+.card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.card h3 {
+  color: mediumslateblue;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.card p {
+  color: mediumslateblue;
+  font-size: 9px;
+  margin-top: 12px;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
